@@ -20,27 +20,40 @@
 
 <header>
   <div class="container nav-container">
-    <div class="logo-area">
-      <img src="logo.svg" alt="Logo SystemIN" class="logo-img" />
-      <h1 class="logo-text">SystemIN</h1>
+    
+    <!-- Imagem S isolada no canto esquerdo -->
+    <div class="logo-solo">
+      <img src="logo.svg" alt="Logo S" class="logo-img-solo" />
     </div>
-    <nav aria-label="Menu principal">
-      <ul class="nav-links" id="nav-links">
-        <li><a href="#sobre">Sobre</a></li>
-        <li><a href="#funcionalidades">Funcionalidades</a></li>
-        <li><a href="#diferenciais">Diferenciais</a></li>
-        <li><a href="#contato">Contato</a></li>
-        <li><a href="devs.html">💻 Devs</a></li>
-      </ul>
-      <button class="mobile-menu" aria-label="Abrir menu" onclick="toggleMenu()">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      <button id="toggleTheme">🌙</button>
-    </nav>
+
+    <!-- Área com texto SystemIN e menu -->
+    <div class="logo-menu-area">
+      <div class="logo-area">
+        <h1 class="logo-text">SystemIN</h1>
+      </div>
+
+      <nav aria-label="Menu principal">
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#funcionalidades">Funcionalidades</a></li>
+          <li><a href="#diferenciais">Diferenciais</a></li>
+          <li><a href="#contato">Contato</a></li>
+          <li><a href="devs.html">Devs</a></li>
+          <li>
+            <button id="toggleTheme" aria-label="Alternar tema claro/escuro"> Tema</button>
+          </li>
+        </ul>
+        <button class="mobile-menu" aria-label="Abrir menu" onclick="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </nav>
+    </div>
+
   </div>
 </header>
+
 
 
 

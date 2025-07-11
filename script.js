@@ -209,52 +209,16 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-   const logo = document.getElementById("logoImg");
-  const hero = document.getElementById("hero");
 
-  let spinTimeout;
-  let exploded = false;
+  const mobileMenu = document.getElementById("mobile-menu");
+  const navLinks = document.getElementById("nav-links");
 
-  logo.addEventListener("mouseenter", () => {
-    if (exploded) return;
-
-    logo.classList.add("spin");
-
-    spinTimeout = setTimeout(() => {
-      logo.classList.remove("spin");
-      logo.classList.add("explode");
-      hero.classList.add("hero-explode");
-
-      setTimeout(() => {
-        // Neon na tela
-        hero.classList.remove("hero-explode");
-        hero.classList.add("hero-neon");
-
-        // Logo reaparece depois
-        setTimeout(() => {
-          logo.classList.remove("explode");
-          logo.classList.add("reappear");
-
-          // Página volta ao normal
-          hero.classList.remove("hero-neon");
-          hero.classList.add("hero-recover");
-
-          setTimeout(() => {
-            hero.classList.remove("hero-recover");
-            logo.classList.remove("reappear");
-            exploded = false;
-          }, 600); // fim do recover
-
-        }, 3000); // logo reaparece após 3s
-
-      }, 1500); // neon dura 1.5s
-
-      exploded = true;
-
-    }, 5000); // explode após 5s com mouse
+  mobileMenu.addEventListener("click", () => {
+    navLinks.classList.toggle("show");
   });
 
-  logo.addEventListener("mouseleave", () => {
-    clearTimeout(spinTimeout);
-    if (!exploded) logo.classList.remove("spin");
-  });
+
+
+   
+
+

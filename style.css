@@ -32,45 +32,73 @@
 
 /* Header */
 header {
-  background-color: #002f5f; /* azul escuro */
-  padding: 15px 0;
-  max-height: 130px; /* controla altura máxima */
-  overflow: hidden;
+  position: relative;
+  background-color: #00256b;
+  padding: 2rem 0;
 }
-
-
 
 .nav-container {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-}
-
-.logo {
-  font-size: 1.8rem;
-  font-weight: bold;
-}
-
-nav {
+  justify-content: center;
   position: relative;
 }
 
-.nav-links {
-  list-style: none;
+/* imagem S isolada no canto esquerdo */
+.logo-solo {
+  position: absolute;
+  left: -20rem; 
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+
+.logo-img-solo {
+  width: 180px; 
+  height: auto;
+}
+
+/* parte com texto SystemIN + menu */
+.logo-menu-area {
   display: flex;
-  gap: 1.5rem;
+  flex-direction: row;
+  align-items: center;
+  gap: 20rem;
 }
 
-.nav-links a {
-  color: white;
+.logo-text {
+  font-size: 3rem;
+  font-weight: bold;
+  color: rgb(0, 174, 255);
+  text-shadow: 0 0 10px rgb(0, 140, 255);
+}
+
+/* menu já com estilo e botão do tema */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  list-style: none;
+}
+
+.nav-links li a,
+.nav-links li button {
+  color: #00bfff;
+  background: none;
+  border: none;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
   text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s;
 }
 
-.nav-links a:hover {
-  color: var(--accent);
+.nav-links li a:hover,
+.nav-links li button:hover {
+  color: var(--secondary);
 }
+
+
+
 
 /* Mobile menu */
 .mobile-menu {
@@ -251,14 +279,6 @@ footer {
   width: 2000px;
   height: 2000px;
   opacity: 1;
-}
-
-/* Digitação */
-.cursor {
-  font-weight: bold;
-  font-size: 1.5rem;
-  color: white;
-  animation: blink 0.8s infinite;
 }
 
 @keyframes blink {
@@ -530,53 +550,30 @@ body.dark-theme .dev-card p {
 }
 
 
-.logo-area {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.logo-img {
-  height: 60px; /* aumente sem mudar header */
-  width: auto;
-  filter: drop-shadow(0 0 6px #00f0ff);
-  object-fit: contain;
-}
-
-.logo-text {
-  font-size: 2.2rem;
-  font-weight: bold;
-  color: #00f0ff;
-  text-shadow: 0 0 8px #00f0ff;
-}
 
 /* Responsividade */
 @media (max-width: 768px) {
-  .nav-links {
-    display: none;
+  /* Logo imagem S no topo esquerdo */
+  .logo-solo {
     position: absolute;
-    top: 70px;
-    right: 0;
-    background-color: var(--primary);
+    left: 0.5rem;
+    top: 1.5rem;
+    transform: none;
+  }
+
+  .logo-img-solo {
+    width: 100px; /* Reduz o tamanho para caber bem no mobile */
+  }
+
+  /* Alinha o logo-text e menu ao centro/empilhado */
+  .logo-menu-area {
     flex-direction: column;
-    width: 100%;
-    padding: 1rem 0;
     gap: 1rem;
+    align-items: center;
+    text-align: center;
   }
 
-  .nav-links.show {
-    display: flex;
-  }
-
-  .mobile-menu {
-    display: flex;
-  }
-
-  .hero h2 {
+  .logo-text {
     font-size: 2rem;
-  }
-
-  .btn {
-    padding: 0.7rem 1.5rem;
   }
 }
